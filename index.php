@@ -1,7 +1,8 @@
 <?php
   //grab the first ship so we can get the total # of ships
   $first_ship = json_decode(file_get_contents('http://dev.swcombine.net/ws/v0.1/rules/ships.json?start_index=1&item_count=1'));
-  print_r($first_ship);
+  $total_ships = $first_ship->total;
+  echo $total_ships;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,17 +37,7 @@
     <script type="text/javascript">
       $(function() {
 
-        $.ajax({
-  url: 'http://dev.swcombine.net/ws/v0.1/rules/ships.json?start_index=1&item_count=1',
-  dataType: 'json',
-  success: function(data) {
-          console.log(data);
-        }
-      });
-        
-      //  for(i=1; i<shipTotal; i+= 20) {
-
-        //}
+      
       });
     </script>
   </head>
